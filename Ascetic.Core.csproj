@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Alex Zayats</Authors>
+    <PackageId>Ascetic.Core</PackageId>
+    <PackageTags>Tools</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/AlexZayats/ascetic.core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlexZayats/ascetic.core.git</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE" />
+    <None Remove="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+    <None Include="icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+</Project>
