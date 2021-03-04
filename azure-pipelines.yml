@@ -11,14 +11,14 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Build and Pack'
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '1'
-    minorVersion: '1'
-    patchVersion: '0'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'Version'
 - task: NuGetCommand@2
+  displayName: 'Push to NuGet'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
